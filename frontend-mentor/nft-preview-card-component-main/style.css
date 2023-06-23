@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css?family=Outfit&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Primary */
+    --softblue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+
+    /* Neutral */
+    --verydarkblue-main: hsl(217, 54%, 11%); /* Main BG */
+    --verydarkblue-card: hsl(216, 50%, 16%); /* Card BG */
+    --verydarkblue-line: hsl(215, 32%, 27%);
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--verydarkblue-main);
+    font-family: "Outfit";
+    color: var(--softblue);
+}
+
+p {
+    font-size: 18px;
+}
+
+img {
+    border-radius: 15px;
+}
+
+a {
+    text-decoration: none;
+}
+
+hr {
+    height: 1px;
+    border: none;
+    background-color: var(--verydarkblue-line);
+}
+
+.card {
+    background-color: var(--verydarkblue-card);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px -10px black;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vertical-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.medium-image {
+    width: 300px;
+    height: 300px;
+}
+
+.profile-image {
+    height: 35px;
+    border: solid white 1px;
+    border-radius: 50%;
+}
+
+.active-cyan {
+    color: white;
+}
+
+.active-cyan:hover {
+    color: var(--cyan);
+    cursor: pointer;
+}
+
+.viewable-image:hover > .overlay {
+    background-color: rgba(0, 255, 255, 0.5);
+    cursor: pointer;
+    visibility: visible;
+    z-index: 1;
+}
+
+.viewable-image > .overlay {
+    visibility: hidden;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
