@@ -1,25 +1,22 @@
 <!DOCTYPE html>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Write A Comment</title>
-        <link rel="stylesheet" href="style.css">
+        <title>Chat</title>
+        <link rel="stylesheet" href="./style.css" media="all">
     </head>
     <body>
-        <div class="container">
-            <h1>Write A Comment</h1>
-            <form id="comment-form">
-                <label for="content">Content:</label>
-                <input type="text" id="content" name="content">
-                <label for="author">Author:</label>
-                <input type="text" id="author" name="author">
-                <button type="submit">Comment</button>
-            </form>
+        <div id="chat" class="container shadow" style="width: 70vw; height: 50vh; overflow-y: scroll; display: block;">
+            <!-- Chat history here -->
         </div>
 
-        <div id="comments" class="container">
-            <h1 style="margin-bottom: 20px;">Comments</h1>
+        <div class="container shadow" style="width: 70vw; background-color: #40414F;">
+            <input id="message-input" type="text" placeholder="Send a message">
+        </div>
+
+        <div class="container shadow" style="width: 70vw; background-color: #40414F;">
+            <input id="username-input" type="text" placeholder="Username">
         </div>
 
         <script src="./script.js"></script>

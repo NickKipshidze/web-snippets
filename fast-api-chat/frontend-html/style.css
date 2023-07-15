@@ -3,14 +3,6 @@
     padding: 0;
 }
 
-body {
-    margin: 30px;
-    background-color: #22272E;
-    color: white;
-    font-family: monospace;
-    align-items: center;
-}
-
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -24,69 +16,58 @@ body {
     border-radius: 4px;
 }
 
-#comment-form {
+body {
     display: flex;
-    margin-top: 20px;
+    height: 100vh;
+
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    gap: 20px;
-}
+    gap: 30px;
 
-input[type = "text"] {
-    padding: 10px;
-    background-color: transparent;
-    outline: none;
-    border: solid #444C56 1px;
-    border-radius: 5px;
-    color: white;
-    font-size: 20px;
-}
-
-input[type = "text"]:focus {
-    border-color: #467CC1;
-    outline-color: #467CC1;
-}
-
-button[type = "submit"] {
-    padding: 10px;
-    font-size: 20px;
-    color: #ADBAC7;
-    background-color: #1C2128;
-    box-shadow: 0px 0px 10px -5px black;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    cursor: pointer;
-}
-
-button[type = "submit"]:hover {
-    background-color: #2B3038;
+    background-color: #343541;
+    font-family: sans-serif;
 }
 
 .container {
     display: flex;
-    margin: auto;
-    margin-top: 50px;
-    padding: 20px;
-    max-width: 1000px;
+    padding: 10px;
     flex-direction: column;
-    background-color: #22272E;
-    border: solid #444C56 1px;
+    background-color: #444654;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px -5px black;
+}
+
+.shadow {
+    box-shadow: black 0px 0px 15px -5px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    outline: none;
+    border: none;
+    background-color: #40414F;
+    color: white;
+    font-size: 15px;
 }
 
 .comment {
     display: flex;
-    margin: 5px;
-    padding: 20px;
+    margin-bottom: 10px;
     flex-direction: column;
-    gap: 20px;
-    background-color: #22272E;
-    border: solid #444C56 1px;
+    background-color: #343541;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px -5px black;
+    overflow: hidden;
 }
 
 .comment > h1 {
-    color: #467CC1;
+    padding: 5px;
+    font-size: 20px;
+    color: white;
+    background-color: #383b50;
+}
+
+.comment > p {
+    padding: 5px;
+    font-size: 15px;
+    color: white;
 }

@@ -1,73 +1,57 @@
-const API = "http://192.168.100.5:8000";
+const API = "http://0.0.0.0";
 
-const commentForm = document.getElementById("comment-form");
+const commentsContainer = document.getElementById("chat");
+const messageInput = document.getElementById("message-input");
+const usernameInput = document.getElementById("username-input");
+let comments = [];
 
-commentForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
+// Working on fixing this
+(async function updateChat() {
+    const data = await fetch(API + "/comments")
+        .then(function (response) {
+            if (response.ok) {
+                return response.json()
+            } else {
+                console.log("Something's fucked up");
+            }
+        });
 
-    const content = document.getElementById("content").value;
-    const author = document.getElementById("author").value;
+    if (comments.length < data.length) {
+        commentsContainer.innerHTML = "";
 
-    const data = {
-        "content": content,
-        "author": author
-    };
+        for (comment of data) {
+            commentsContainer.innerHTML += `
+                <div class="comment">
+                    <h1>${comment.user}</h1>
+                    <p>${comment.content}<p>
+                </div>
+            `;
+        }
+        comments = data;
 
-    try {
-        const response = await fetch(API + "/comments/new", {
+        commentsContainer.scrollTop = commentsContainer.scrollHeight;
+    }
+
+    setTimeout(updateChat, 1000);
+})();
+
+messageInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        const message = messageInput.value;
+        const user = usernameInput.value;
+
+        fetch(API + "/comment", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(data)
-        });
+            body: JSON.stringify({
+                user: user,
+                content: message
+            })
+        })
 
-        if (response.ok) {
-            const result = await response.json();
-            console.log(result);
-            location.reload();
-        }
-    } catch (error) {
-        console.log("Error:", error.message);
+        messageInput.value = "";
     }
 });
-
-const checkAPIStatus = async () => {
-    try {
-        const response = await fetch(API);
-
-        if (response.ok) {
-            console.log("API is up and running");
-        } else {
-            console.log("API is down");
-            window.location.href = "./error.html";
-        }
-    } catch (error) {
-        console.log("API is down");
-        window.location.href = "./error.html";
-    }
-};
-
-async function getComments() {
-    const response = await fetch(API + "/comments");
-    const comments = response.json();
-
-    return comments;
-}
-
-async function outputComments() {
-    const commentsContainer = document.getElementById("comments");
-    const comments = await getComments();
-
-    for (comment of comments.reverse()) {
-        commentsContainer.innerHTML += `
-            <div class="comment">
-                <h1>${comment.author}</h1>
-                <p>${comment.content}</p>
-            </div>
-        `;
-    }
-}
-
-checkAPIStatus();
-outputComments();
