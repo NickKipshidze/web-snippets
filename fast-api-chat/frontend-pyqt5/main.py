@@ -27,18 +27,18 @@ class MainWindow(qtw.QWidget):
             for comment in new_comments:
                 self.comments.append(comment)
                 self.comments_container.layout().addWidget(
-                    qtw.QLabel(comment["author"] + " - " + comment["content"])
+                    qtw.QLabel(comment["user"] + " - " + comment["content"])
                 )
     
     def new_comment(self) -> None:
         comment: dict = {
-            "author": self.name_input.text(), 
+            "user": self.name_input.text(), 
             "content": self.comment_input.text()
         }
         
         self.comment_input.setText("")
         
-        requests.post("http://127.0.0.1:8000/comments/new", json=comment)
+        requests.post("http://127.0.0.1:8000/comment", json=comment)
     
     def draw(self) -> None:
         self.comments_container = qtw.QWidget()
