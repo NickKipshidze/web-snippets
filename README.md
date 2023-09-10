@@ -13,7 +13,7 @@ Mini projects, experimentation with different JS/CSS frameworks and some front-e
 ## Frontend mentor projects
 
 <p align="center">
-    <img src="https://seeklogo.com/images/F/frontend-mentor-logo-DD85EFE0E9-seeklogo.com.png" height=64>
+    <img src="./images/frontend.png" height=64>
 </p>
 
 Frontend mentor projects are located in [`./frontend-mentor`](./frontend-mentor/) directory.
