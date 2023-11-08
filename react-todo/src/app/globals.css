@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Kodchasan;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  height: 100vh;
+  color: #ffffff;
+  background-color: #171C22;
+  overflow: hidden;
+}
+
+.nav-bar {
+  display: flex;
+  position: block;
+  margin: auto;
+  flex-direction: row;
+  background-color: #545556;
+  padding: 10px 10px 0 10px;
+  margin: 0 15px 0 15px;
+  border-radius: 15px 15px 0px 0px;
+  gap: 10px;
+}
+
+.nav-bar>* {
+  padding: 0;
+  margin: 0;
+}
+
+.content {
+  display: flex;
+  position: block;
+  flex-direction: row;
+  margin: auto;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  background: #2B343F;
+  flex-grow: 1;
+  width: calc(100% - 20px);
+  padding: 10px;
+}
+
+.tasks-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  background: #171C22;
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.25);
+  min-width: 320px;
+  max-width: 420px;
+  flex-grow: 1;
+}
+
+.tasks-card :nth-child(1) {
+  border-radius: 15px 15px 5px 5px;
+  background: #00BD95;
+  color: black;
+  padding: 5px;
+  text-align: center;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.tasks-card :nth-child(2) {
+  margin: 13px;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.tasks-card>button {
+  margin: 13px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: #165750;
+  color: #FFF;
+  font-size: 25px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
+}
+
+.tasks-card>button:hover {
+  background-color: #1c8076;
+}
+
+.tasks-card>div {
+  display: flex;
+  align-items: center;
+  padding-left: 9px;
+  margin: 3px 13px 3px 13px;
+  border-radius: 5px;
+  background-color: #002E29;
+  height: 40px;
+}
+
+.add-day-btn {
+  margin-left: 23px;
+  outline: none;
+  border: none;
+  color: #FFF;
+  text-align: center;
+  font-family: Kodchasan;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  cursor: pointer;
+  width: 50px;
+  border-radius: 15px;
+  background-color: #171C22;
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.25);
+}
