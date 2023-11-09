@@ -35,3 +35,4 @@ Frontend mentor projects are located in [`./frontend-mentor`](./frontend-mentor/
 | 03  | [FastAPI chat](./fast-api-chat/)  | None        | FastAPI, PyQT5
 | 04  | [NFT preview card](./frontend-mentor/nft-preview-card-component-main/) | [nicksnftpreview.netlify.app](https://nicksnftpreview.netlify.app/) | None
 | 05  | [QR code component](./frontend-mentor/qr-code-component-main/) | [nicksqrcode.netlify.app](https://nicksqrcode.netlify.app/) | None
+| 06  | [React Todo](./react-todo/) | None | React, NextJS, TypeScript
