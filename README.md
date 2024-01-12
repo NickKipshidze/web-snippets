@@ -16,7 +16,7 @@ Mini projects, experimentation with different JS/CSS frameworks and some front-e
     <img src="./images/frontend.png" height=64>
 </p>
 
-Frontend mentor projects are located in [`./frontend-mentor`](./frontend-mentor/) directory.
+Frontend mentor projects are located in [./frontend-mentor](./frontend-mentor/) directory.
 
 ## Frameworks
 
